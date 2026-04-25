@@ -8,6 +8,7 @@ import random
 import re
 import statistics
 import time
+import warnings
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,6 +18,9 @@ import psutil
 import torch
 from huggingface_hub import snapshot_download
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# Suppress transformers warning about max_new_tokens and max_length both being set
+warnings.filterwarnings("ignore", message=".*Both.*max_new_tokens.*max_length.*seem to have been set.*")
 
 
 SYSTEM_PROMPT = """You are a reliable planning agent.
@@ -194,6 +198,7 @@ class AgenticValidator:
                 input_ids=input_ids,
                 attention_mask=attn_mask,
                 max_new_tokens=self.max_new_tokens,
+                max_length=None,
                 do_sample=False,
                 pad_token_id=self.tokenizer.eos_token_id,
             )
