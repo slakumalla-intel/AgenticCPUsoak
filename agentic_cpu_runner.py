@@ -374,7 +374,7 @@ def _percentile(values: List[float], pct: float) -> float:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="CPU-only agentic validation runner")
-    parser.add_argument("--model-id", type=str, default="NousResearch/Hermes-3-Llama-3.2-1B")
+    parser.add_argument("--model-id", type=str, default="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
     parser.add_argument("--duration-hours", type=float, default=36.0)
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--report-every-sec", type=int, default=300)

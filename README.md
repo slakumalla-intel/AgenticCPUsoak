@@ -11,9 +11,9 @@ This project runs a CPU-only agentic workload for up to 36 hours using a small L
 
 ## Default model
 
-`NousResearch/Hermes-3-Llama-3.2-1B`
+`TinyLlama/TinyLlama-1.1B-Chat-v1.0`
 
-This is an open Llama 3.2 1B family model and is usually available without a gated access flow.
+This is an open 1B model available without gated access. No token required.
 If you want the official Meta checkpoint, use `--model-id meta-llama/Llama-3.2-1B-Instruct` and pass `HF_TOKEN`.
 
 ## Setup (Linux x86_64)
